@@ -2,7 +2,7 @@
 
 Framework modular, ringan, dan 100% berbahasa Indonesia.
 Dibangun tanpa Composer, berjalan cepat di shared hosting, serta ideal untuk UMKM dan aplikasi kecil–menengah.
-https://github.com/uneeddeveloper/Rakit-framework-by-uneeddeveloper/blob/e604d8dddcffd6ed6b59c69feb191d4fb61f9c8f/rakit.png
+![Logo Rakit](https://raw.githubusercontent.com/uneeddeveloper/Rakit-framework-by-uneeddeveloper/e604d8dddcffd6ed6b59c69feb191d4fb61f9c8f/rakit.png)
 
 ---
 
