@@ -1,8 +1,24 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/uneeddeveloper/Rakit-framework-by-uneeddeveloper/e604d8dddcffd6ed6b59c69feb191d4fb61f9c8f/rakit.png" width="120">
+</p>
+
+<p align="center">
+  <strong>Rakit Framework</strong><br>
+  <em>Mini PHP Framework dengan Arsitektur HMVC – Simple, Modular, Indonesia Banget</em>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Framework-Rakit%20HMVC-00ff00?style=flat&logo=php">
+  <img src="https://img.shields.io/badge/Version-1.0.0-00ff00?style=flat">
+  <img src="https://img.shields.io/badge/License-MIT-00ff00?style=flat">
+</p>
+
+---
+
 # 🛠️ Rakit — Framework HMVC Ringan Berbasis PHP
 
 Framework modular, ringan, dan 100% berbahasa Indonesia.
 Dibangun tanpa Composer, berjalan cepat di shared hosting, serta ideal untuk UMKM dan aplikasi kecil–menengah.
-![Logo Rakit](https://raw.githubusercontent.com/uneeddeveloper/Rakit-framework-by-uneeddeveloper/e604d8dddcffd6ed6b59c69feb191d4fb61f9c8f/rakit.png)
 
 ---
 
