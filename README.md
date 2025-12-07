@@ -1,10 +1,31 @@
+Siap! Sekarang aku akan **menggabungkan dua hal**:
+
+### ✔ README versi panjang & profesional (yang kamu kirim)
+
+**+**
+
+### ✔ Logo kecil + badge + header cantik yang sebelumnya sudah aku buat
+
+Hasilnya adalah **README.md final** yang sudah lengkap, indah, rapi, dan siap publish ke GitHub.
+
+---
+
+# 🎉 **README.md FINAL – RAKIT FRAMEWORK**
+
+(versi lengkap + logo + badge + dokumentasi)
+
+> ⚠ Kamu tinggal COPY PASTE ke GitHub.
+
+---
+
+```markdown
 <p align="center">
   <img src="https://raw.githubusercontent.com/uneeddeveloper/Rakit-framework-by-uneeddeveloper/e604d8dddcffd6ed6b59c69feb191d4fb61f9c8f/rakit.png" width="120">
 </p>
 
 <p align="center">
   <strong>Rakit Framework</strong><br>
-  <em>Mini PHP Framework dengan Arsitektur HMVC – Simple, Modular, Indonesia Banget</em>
+  <em>HMVC PHP Framework – Ringan, Modular, Indonesia Banget</em>
 </p>
 
 <p align="center">
@@ -15,120 +36,84 @@
 
 ---
 
-# 🛠️ Rakit — Framework HMVC Ringan Berbasis PHP
+# 🛠️ Rakit
 
-Framework modular, ringan, dan 100% berbahasa Indonesia.
-Dibangun tanpa Composer, berjalan cepat di shared hosting, serta ideal untuk UMKM dan aplikasi kecil–menengah.
+> Framework HMVC ringan berbasis PHP, 100% berbahasa Indonesia, untuk pengembangan aplikasi web modular.  
+> Ringan. Cepat. Siap CLI. Tanpa dependensi berat. Untuk semua developer.
 
 ---
 
 ## 📌 Daftar Isi
 
-- [Fitur Utama](#fitur-utama)
-- [Struktur Folder](#struktur-folder)
-- [Instalasi](#instalasi)
-- [Membuat Modul Baru](#membuat-modul-baru)
-- [Sistem Tema (Layout)](#sistem-tema-layout)
-- [Database Layer](#database-layer)
-- [Sesi & Autentikasi](#sesi--autentikasi)
-- [Penanganan Error](#penanganan-error)
-- [Konvensi Penamaan](#konvensi-penamaan)
-- [Debugging Umum](#debugging-umum)
-- [Deployment ke Produksi](#deployment-ke-produksi)
-- [Lisensi](#lisensi)
+- [Fitur Utama](#-fitur-utama)
+- [Persyaratan](#-persyaratan)
+- [Instalasi](#-instalasi)
+- [Struktur Folder](#-struktur-folder)
+- [CLI (Command Line Interface)](#-cli-command-line-interface)
+  - [`buat:controller`](#buatcontroller)
+  - [`db:migrate`](#dbmigrate)
+- [Konfigurasi Lingkungan](#-konfigurasi-lingkungan)
+- [Database & Migrasi](#-database--migrasi)
+- [Modul & Routing](#-modul--routing)
+- [Tema (Layout)](#-tema-layout)
+- [Penanganan Error](#-penanganan-error)
+- [Deployment ke Produksi](#-deployment-ke-produksi)
+- [Lisensi](#-lisensi)
 
 ---
 
-## 🚀 Fitur Utama
+## ✅ Fitur Utama
 
-- **Arsitektur HMVC** — tiap fitur terisolasi dalam modul.
-- **Routing sederhana** mirip Laravel (`rute/web.php`).
-- **Controller berbasis class** (misal: `PengendaliAset`).
-- **Tema global** untuk konsistensi tampilan.
-- **Database layer ringan** berbasis PDO.
-- **Error handling profesional** dengan halaman 404 & 500 berbahasa Indonesia.
-- **Session & autentikasi bawaan**.
-- **100% berbahasa Indonesia** — penamaan file, class, komentar.
-- **Ringan & cepat**, cocok untuk shared hosting.
-- **Tanpa Composer**, langsung jalan di PHP native.
-
----
-
-## 🗂️ Struktur Folder
-
-```
-my-hmvc-umkm/
-├── app/
-│   ├── tema/
-│   │   └── utama.php
-│   ├── error/
-│   │   ├── 404.php
-│   │   └── 500.php
-│   └── Modul/
-│       ├── UMKM/
-│       └── Aset/
-├── konfigurasi/
-│   ├── database.php
-│   └── aplikasi.php
-├── inti/
-│   ├── Pengarah.php
-│   └── BasisData.php
-├── rute/
-│   └── web.php
-├── publik/
-│   ├── index.php
-│   └── .htaccess
-├── umkm.sql
-└── README.md
-```
+- **Arsitektur HMVC** — tiap fitur terisolasi dalam modul
+- **CLI Bawaan** — buat controller & migrasi database via terminal
+- **Routing Sederhana** — seperti Laravel (`rute/web.php`)
+- **Tema Global** — konsistensi tampilan di seluruh halaman
+- **Database Layer Aman** — berbasis PDO, aman dari SQL injection
+- **Error Handling Profesional** — halaman 404 & 500 kustom
+- **Konfigurasi `.env`** — kelola database & mode aplikasi
+- **100% Berbahasa Indonesia** — dari nama file hingga dokumentasi
+- **Portable** — jalan di Windows, Linux, Mac, laptop siapa saja
 
 ---
 
-## 📥 Instalasi
+## ⚙️ Persyaratan
 
-### Persyaratan
-
-- PHP **8.0+**
+- PHP 8.0+
 - MySQL / MariaDB
-- Apache / Nginx / XAMPP / Laragon
+- Web server (Apache/Nginx/Laragon/XAMPP)
 
-### Langkah Instalasi
+---
 
-1. **Unduh project** ke folder web
-   Contoh:
+## 🚀 Instalasi
 
-   ```
-   C:/laragon/www/smu
-   ```
+1. **Unduh atau clone proyek** ke folder web:
+```
 
-2. **Import database**
+C:/laragon/www/rakit
 
-   ```sql
-   CREATE DATABASE umkm_app;
-   -- lalu import file umkm.sql
-   ```
+````
+2. **Buat database**:
+```sql
+CREATE DATABASE rakit_app;
+````
 
-3. **Atur koneksi database** di `konfigurasi/database.php`:
+3. **Salin file konfigurasi**:
 
-   ```php
-   return [
-       'host'         => 'localhost',
-       'nama_database'=> 'umkm_app',
-       'pengguna'     => 'root',
-       'kata_sandi'   => '',
-       'charset'      => 'utf8mb4'
-   ];
+   ```bash
+   copy .env.contoh .env    # Windows
+   cp .env.contoh .env      # Linux/Mac
    ```
 
-4. **Atur mode aplikasi** di `konfigurasi/aplikasi.php`:
+4. **Isi `.env`:**
 
-   ```php
-   return [
-       'mode' => 'development' // production jika sudah live
-   ];
+   ```ini
+   MODE_APLIKASI=development
+   NAMA_DATABASE=rakit_app
+   PENGGUNA_DATABASE=root
+   KATA_SANDI_DATABASE=
    ```
 
-5. **Jalankan server** dari folder publik:
+5. **Jalankan server**:
 
    ```bash
    cd publik
@@ -136,209 +121,215 @@ my-hmvc-umkm/
    ```
 
 6. Buka browser:
-   👉 [http://localhost:8000](http://localhost:8000)
+   **[http://localhost:8000](http://localhost:8000)**
 
 ---
 
-## 🛠️ Membuat Modul Baru
-
-Setiap fitur (Aset, Produk, Laporan) dikelompokkan dalam modul.
-
-### **1. Buat Struktur Folder**
+## 🗂️ Struktur Folder
 
 ```
-Modul/NamaModul/
-├── Controller/
-│   └── PengendaliNamaModul.php
-└── Tampilan/
-    ├── daftar.php
-    └── tambah.php
+rakit/
+├── app/                  # Aplikasi inti
+│   ├── tema/             # Tema/layout global
+│   ├── error/            # Halaman error kustom
+│   └── ...
+├── database/migrasi/     # File migrasi SQL
+├── inti/                 # Core framework
+├── konfigurasi/          # Konfigurasi aplikasi & database
+├── Modul/                # Semua modul aplikasi
+├── perintah/             # Perintah CLI
+├── publik/               # Web root (public)
+├── rute/                 # Routing aplikasi
+├── .env                  # Konfigurasi lingkungan
+├── .env.contoh           # Contoh konfigurasi
+├── rkt                   # CLI utama
+└── README.md
 ```
-
-> Ganti **NamaModul** sesuai fitur, contoh: `Produk`
 
 ---
 
-### **2. Buat Controller**
+# 💻 CLI (Command Line Interface)
 
-**Contoh:** `Modul/Produk/Controller/PengendaliProduk.php`
+Framework `Rakit` menyediakan CLI untuk mempercepat pengembangan.
+
+### Penggunaan Umum
+
+```bash
+php rkt [perintah] [argumen]
+```
+
+---
+
+### 🔧 `buat:controller`
+
+Membuat modul lengkap: controller + view.
+
+```bash
+php rkt buat:controller Produk
+```
+
+Hasil:
+
+- `Modul/Produk/Controller/PengendaliProduk.php`
+- `Modul/Produk/Tampilan/index.php`
+
+---
+
+### 🗄 `db:migrate`
+
+Menjalankan semua file SQL di `database/migrasi/`.
+
+```bash
+php rkt db:migrate
+```
+
+Penamaan migrasi harus:
+
+```
+01_buat_tabel_user.sql
+02_buat_tabel_produk.sql
+```
+
+---
+
+## ⚙️ Konfigurasi Lingkungan
+
+Gunakan file `.env` untuk mengatur:
+
+```ini
+# MODE
+MODE_APLIKASI=development
+
+# DATABASE
+HOST_DATABASE=localhost
+NAMA_DATABASE=rakit_app
+PENGGUNA_DATABASE=root
+KATA_SANDI_DATABASE=
+CHARSET_DATABASE=utf8mb4
+
+# URL
+URL_APLIKASI=http://localhost:8000
+```
+
+---
+
+## 🗃️ Database & Migrasi
+
+### 1. Membuat file migrasi
+
+```sql
+-- database/migrasi/01_buat_tabel_umkm.sql
+CREATE TABLE umkms (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(255) NOT NULL
+);
+```
+
+### 2. Menjalankan migrasi
+
+```bash
+php rkt db:migrate
+```
+
+### 3. Query database di framework
 
 ```php
-<?php
-
-class PengendaliProduk
-{
-    public function daftar()
-    {
-        // Hanya pengguna login yang boleh masuk
-        if (!isset($_SESSION['id_umkm'])) {
-            header("Location: /umkm/masuk");
-            exit;
-        }
-
-        $this->tampilkan('daftar');
-    }
-
-    private function tampilkan(string $nama_tampilan, array $data = [], bool $gunakan_tema = true): void
-    {
-        extract($data);
-        $jalur = __DIR__ . "/../Tampilan/{$nama_tampilan}.php";
-
-        if (!file_exists($jalur)) {
-            throw new Exception("Tampilan tidak ditemukan: {$jalur}");
-        }
-
-        ob_start();
-        require $jalur;
-        $konten = ob_get_clean();
-
-        if ($gunakan_tema) {
-            $tema = dirname(__DIR__, 3) . '/app/tema/utama.php';
-
-            if (!file_exists($tema)) {
-                throw new Exception("Tema utama tidak ditemukan");
-            }
-
-            require $tema;
-        } else {
-            echo $konten;
-        }
-    }
-}
+$data = BasisData::ambil("SELECT * FROM aset WHERE id = ?", [$id]);
+$id = BasisData::simpan("INSERT INTO produk (nama) VALUES (?)", [$nama]);
 ```
 
 ---
 
-### **3. Tambahkan Rute**
+## 🧩 Modul & Routing
+
+### Struktur Modul
+
+```
+Modul/Produk/
+├── Controller/PengendaliProduk.php
+└── Tampilan/daftar.php
+```
+
+### Routing
 
 `rute/web.php`:
 
 ```php
+$pengarah->ambil('/produk', 'PengendaliProduk@index');
 $pengarah->ambil('/produk/daftar', 'PengendaliProduk@daftar');
-$pengarah->ambil('/produk/tambah', 'PengendaliProduk@tambah');
 ```
 
 ---
 
-## 🖥️ Sistem Tema (Layout)
+## 🎨 Tema (Layout)
 
-Tema global berada di:
+Default tema: `app/tema/utama.php`
 
-```
-app/tema/utama.php
-```
-
-### Di Controller:
+### Controller menggunakan tema:
 
 ```php
-$this->tampilkan('dasbor', ['nama' => 'Toko ABC']); // pakai tema
-$this->tampilkan('masuk', $data, false);            // tanpa tema
+$this->tampilkan('dashboard', ['nama' => 'Rakit App']);
 ```
 
-### Di Tampilan:
+### Tanpa tema:
 
 ```php
-<?php $judul = "Manajemen Produk"; ?>
-<h1><?= $judul ?></h1>
-```
-
----
-
-## 🗃️ Database Layer
-
-Gunakan `BasisData` untuk query database.
-
-### SELECT
-
-```php
-$data = BasisData::ambil("SELECT * FROM aset WHERE id_umkm = ?", [$id]);
-```
-
-### INSERT (mengembalikan ID)
-
-```php
-$id = BasisData::simpan("INSERT INTO produk (nama) VALUES (?)", [$nama]);
-```
-
-### UPDATE / DELETE
-
-```php
-BasisData::jalankan("DELETE FROM produk WHERE id = ?", [$id]);
-```
-
----
-
-## 🔐 Sesi & Autentikasi
-
-Sesi aktif otomatis di `publik/index.php`.
-
-### Cek login di controller:
-
-```php
-if (!isset($_SESSION['id_umkm'])) {
-    header("Location: /umkm/masuk");
-    exit;
-}
+$this->tampilkan('login', $data, false);
 ```
 
 ---
 
 ## 🛑 Penanganan Error
 
-### Mode Development
+### Mode development
 
-- Menampilkan pesan error lengkap
-- untuk debugging lokal
+- Semua error terlihat
 
-### Mode Production
+### Mode production
 
-- Menyembunyikan error sensitif
-- Menampilkan halaman:
+- Error disembunyikan
+- Menggunakan tampilan:
 
   - `app/error/404.php`
   - `app/error/500.php`
 
-> Pastikan `Pengarah.php` menangkap **Throwable**, bukan hanya Exception.
-
 ---
 
-## 📜 Konvensi Penamaan
+## 🚀 Deployment ke Produksi
 
-| Komponen         | Format                    | Contoh               |
-| ---------------- | ------------------------- | -------------------- |
-| Modul            | `NamaModul`               | Produk, Aset         |
-| Controller       | `PengendaliNamaModul.php` | PengendaliAset.php   |
-| Class controller | `PengendaliNamaModul`     | class PengendaliAset |
-| Rute             | `/modul/aksi`             | /aset/daftar         |
-| Tampilan         | `nama.php`                | daftar.php           |
-| Tema             | `utama.php`               | app/tema/utama.php   |
+1. Ubah mode aplikasi:
 
----
+   ```ini
+   MODE_APLIKASI=production
+   ```
 
-## 🧪 Debugging Umum
+2. Matikan error reporting:
 
-| Error                            | Penyebab                           | Solusi                                   |
-| -------------------------------- | ---------------------------------- | ---------------------------------------- |
-| Pengendali tidak ditemukan       | File/folder salah                  | Pastikan berada di Modul/Nama/Controller |
-| Tema tidak ditemukan             | File hilang                        | Cek app/tema/utama.php                   |
-| Class `BasisData` not found      | Belum `require_once`               | Tambahkan di controller                  |
-| 404 Not Found                    | Server salah folder                | Jalankan dari folder `publik`            |
-| Halaman error mentah             | Pengarah tidak menangkap Throwable | Update try/catch di Pengarah.php         |
-| File konfigurasi tidak ditemukan | Folder salah                       | Pastikan `konfigurasi/` ada di root      |
+   ```php
+   error_reporting(0);
+   ini_set('display_errors', 0);
+   ```
 
----
+3. Upload ke hosting
+4. Jalankan migrasi:
 
-## 📦 Deployment ke Produksi
-
-- Ubah mode aplikasi ke `production`
-- Pastikan `.htaccess` tetap berada di folder `publik`
-- Pindahkan folder publik sebagai web root hosting
-- Jangan aktifkan display_errors di server
+   ```bash
+   php rkt db:migrate
+   ```
 
 ---
 
 ## 📄 Lisensi
 
-Framework **Rakit** bebas digunakan untuk keperluan UMKM, komersial, atau edukasi.
+MIT License — bebas digunakan untuk proyek pribadi maupun komersial.
 
 ---
+
+<p align="center">
+  Dibangun dengan ❤️ untuk developer Indonesia 🇮🇩
+</p>
+```
+
+---
+
+# 🟢 **READY!**
