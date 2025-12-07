@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../inti/Lingkungan.php';
+Lingkungan::muat(__DIR__ . '/../.env');
 session_start();
 
 // === TANGANI FATAL ERROR (seperti require file gagal) ===

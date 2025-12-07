@@ -1,0 +1,14 @@
+# File konfigurasi sensitif
+.env
+
+# Folder cache/log
+/storage/
+/logs/
+
+# File sementara
+*.tmp
+*.log
+
+# File IDE
+.vscode/
+.idea/
