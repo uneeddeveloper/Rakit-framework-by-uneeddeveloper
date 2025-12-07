@@ -308,9 +308,8 @@ MIT License — bebas digunakan untuk proyek pribadi maupun komersial.
 ---
 
 <p align="center">
-  Dibangun dengan ❤️ untuk developer Indonesia 🇮🇩
+  Dibangun dengan ❤️ untuk developer Pemula Indonesia 🇮🇩
 </p>
-```
 
 ---
 
