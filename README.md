@@ -1,24 +1,3 @@
-Siap! Sekarang aku akan **menggabungkan dua hal**:
-
-### ✔ README versi panjang & profesional (yang kamu kirim)
-
-**+**
-
-### ✔ Logo kecil + badge + header cantik yang sebelumnya sudah aku buat
-
-Hasilnya adalah **README.md final** yang sudah lengkap, indah, rapi, dan siap publish ke GitHub.
-
----
-
-# 🎉 **README.md FINAL – RAKIT FRAMEWORK**
-
-(versi lengkap + logo + badge + dokumentasi)
-
-> ⚠ Kamu tinggal COPY PASTE ke GitHub.
-
----
-
-```markdown
 <p align="center">
   <img src="https://raw.githubusercontent.com/uneeddeveloper/Rakit-framework-by-uneeddeveloper/e604d8dddcffd6ed6b59c69feb191d4fb61f9c8f/rakit.png" width="120">
 </p>
@@ -87,15 +66,18 @@ Hasilnya adalah **README.md final** yang sudah lengkap, indah, rapi, dan siap pu
 ## 🚀 Instalasi
 
 1. **Unduh atau clone proyek** ke folder web:
+
 ```
 
 C:/laragon/www/rakit
 
-````
+```
+
 2. **Buat database**:
+
 ```sql
 CREATE DATABASE rakit_app;
-````
+```
 
 3. **Salin file konfigurasi**:
 
